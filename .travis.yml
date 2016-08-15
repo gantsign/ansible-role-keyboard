@@ -2,8 +2,11 @@
 language: python
 python: "2.7"
 
-# Use the new container infrastructure
-sudo: false
+# Require the standard build environment
+sudo: required
+
+# Require Ubuntu 14.04
+dist: trusty
 
 # Install ansible
 addons:
@@ -13,14 +16,27 @@ addons:
 
 install:
   # Install ansible
-  - pip install ansible
+  - sudo pip install ansible
 
   # Check ansible version
   - ansible --version
 
+  # Update apt
+  - sudo apt-get -qq update
+
 script:
   # Basic role syntax check
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+
+  # Run the playbook with ansible-playbook
+  - sudo ansible-playbook tests/test.yml -i tests/inventory
+
+  # Check the IntelliJ is installed
+  - grep --color=never 'XKBMODEL="pc105"' /etc/default/keyboard 
+  - grep --color=never 'XKBLAYOUT="br"' /etc/default/keyboard 
+  - grep --color=never 'XKBVARIANT="abnt2"' /etc/default/keyboard 
+  - grep --color=never 'XKBOPTIONS="grp:shift_toggle"' /etc/default/keyboard 
+  - grep --color=never 'BACKSPACE="del"' /etc/default/keyboard 
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
