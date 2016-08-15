@@ -2,4 +2,9 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-role-keyboard
+    - role: ansible-role-keyboard
+      keyboard_model: pc105
+      keyboard_layout: br
+      keyboard_variant: abnt2
+      keyboard_options: grp:shift_toggle
+      keyboard_backspace: del
