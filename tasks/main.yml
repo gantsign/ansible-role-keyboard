@@ -6,7 +6,7 @@
 
 - name: write keyboard configration
   template:
-    src: keyboards.txt
+    src: keyboards.j2
     dest: /etc/default/keyboard
     force: true
 
