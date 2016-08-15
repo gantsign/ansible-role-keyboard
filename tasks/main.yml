@@ -9,6 +9,9 @@
     src: keyboards.j2
     dest: /etc/default/keyboard
     force: true
+    owner: root
+    group: root
+    mode: 'u=rw,go=r'
 
 - name: apply keyboard configration
   command: /usr/sbin/dpkg-reconfigure -f noninteractive keyboard-configuration
