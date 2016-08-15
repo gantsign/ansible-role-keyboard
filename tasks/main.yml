@@ -1,10 +1,12 @@
 ---
 - name: install keyboard-configuration
+  become: yes
   apt:
     name: keyboard-configuration
     state: present
 
 - name: write keyboard configration
+  become: yes
   template:
     src: keyboards.j2
     dest: /etc/default/keyboard
@@ -14,4 +16,5 @@
     mode: 'u=rw,go=r'
 
 - name: apply keyboard configration
+  become: yes
   command: /usr/sbin/dpkg-reconfigure -f noninteractive keyboard-configuration
