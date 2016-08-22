@@ -1,6 +1,6 @@
 ---
 language: python
-python: "2.7"
+python: '2.7'
 
 # Require the standard build environment
 sudo: required
@@ -8,35 +8,33 @@ sudo: required
 # Require Ubuntu 14.04
 dist: trusty
 
-# Install ansible
-addons:
-  apt:
-    packages:
-    - python-pip
+# Require Docker
+services:
+  - docker
+
+# Cache Ansible and Molecule to speed things up
+cache:
+  - pip
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -o Dpkg::Options::='--force-confold' --force-yes -y docker-engine
 
 install:
-  # Install ansible
-  - sudo pip install ansible
+  # Install Ansible
+  - pip install ansible
 
-  # Check ansible version
+  # Install Molecule
+  - pip install molecule
+
+  # Check Ansible version
   - ansible --version
 
-  # Update apt
-  - sudo apt-get -qq update
+  # Check Molecule version
+  - molecule --version
 
 script:
-  # Basic role syntax check
-  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
-
-  # Run the playbook with ansible-playbook
-  - ansible-playbook tests/test.yml -i tests/inventory
-
-  # Check the keyboard is configured
-  - grep --color=never 'XKBMODEL="pc105"' /etc/default/keyboard 
-  - grep --color=never 'XKBLAYOUT="br"' /etc/default/keyboard 
-  - grep --color=never 'XKBVARIANT="abnt2"' /etc/default/keyboard 
-  - grep --color=never 'XKBOPTIONS="grp:shift_toggle"' /etc/default/keyboard 
-  - grep --color=never 'BACKSPACE="del"' /etc/default/keyboard 
+  - molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
