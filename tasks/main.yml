@@ -14,9 +14,9 @@
     owner: root
     group: root
     mode: 'u=rw,go=r'
-  register: kb_template
+  register: keyboard_config
 
 - name: apply keyboard configration
   become: yes
   command: /usr/sbin/dpkg-reconfigure -f noninteractive keyboard-configuration
-  when: kb_template.changed
+  when: keyboard_config.changed
