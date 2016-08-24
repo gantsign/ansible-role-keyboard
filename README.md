@@ -2,6 +2,7 @@ Ansible Role: Keyboard
 ======================
 
 [![Build Status](https://travis-ci.org/gantsign/ansible-role-keyboard.svg?branch=master)](https://travis-ci.org/gantsign/ansible-role-keyboard)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.keyboard-blue.svg)](https://galaxy.ansible.com/gantsign/keyboard)
 
 Role to configure the keyboard layout etc.
 
