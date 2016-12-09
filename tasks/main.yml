@@ -4,6 +4,7 @@
   apt:
     name: keyboard-configuration
     state: present
+  when: ansible_os_family == 'Debian'
 
 - name: write keyboard configration
   become: yes
@@ -19,4 +20,4 @@
 - name: apply keyboard configration
   become: yes
   command: /usr/sbin/dpkg-reconfigure -f noninteractive keyboard-configuration
-  when: keyboard_config.changed
+  when: keyboard_config.changed and ansible_os_family == 'Debian'
