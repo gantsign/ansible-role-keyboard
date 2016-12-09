@@ -10,6 +10,8 @@ Role to configure the keyboard layout etc.
 Requirements
 ------------
 
+* Ansible >= 1.9
+
 * Linux Distribution
 
     * Debian Family
