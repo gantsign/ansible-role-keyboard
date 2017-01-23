@@ -58,7 +58,11 @@ Example Playbook
 ```yaml
 - hosts: servers
   roles:
-     - { role: gantsign.keyboard }
+    - role: gantsign.keyboard
+      # European keyboard model (pc105 is widely used outside Europe as well)
+      keyboard_model: pc105
+      # Layout for Great Britain / United Kingdom
+      keyboard_layout: gb
 ```
 
 More Roles From GantSign
