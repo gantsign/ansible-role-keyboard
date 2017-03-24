@@ -2,6 +2,12 @@
 ansible:
   playbook: tests/test.yml
 
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
 docker:
   containers:
   - name: ansible-role-keyboard-debian-wheezy
@@ -16,3 +22,6 @@ docker:
   - name: ansible-role-keyboard-ubuntu-xenial
     image: ubuntu
     image_version: '16.04'
+
+verifier:
+  name: testinfra
