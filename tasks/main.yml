@@ -15,9 +15,5 @@
     owner: root
     group: root
     mode: 'u=rw,go=r'
-  register: keyboard_config
-
-- name: apply keyboard configration
-  become: yes
-  command: /usr/sbin/dpkg-reconfigure -f noninteractive keyboard-configuration
-  when: keyboard_config.changed and ansible_os_family == 'Debian'
+  notify:
+    - apply keyboard configration
