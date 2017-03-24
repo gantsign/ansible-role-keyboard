@@ -16,4 +16,4 @@
     group: root
     mode: 'u=rw,go=r'
   notify:
-    - apply keyboard configration
+    - dpkg-reconfigure keyboard-configuration
