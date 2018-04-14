@@ -11,8 +11,8 @@ lint:
 platforms:
   - name: ansible-role-keyboard-debian-wheezy
     image: debian:7
-  - name: ansible-role-keyboard-debian-jessie
-    image: debian:8
+  - name: ansible-role-keyboard-debian-stretch
+    image: debian:9
   - name: ansible-role-keyboard-ubuntu-trusty
     image: ubuntu:14.04
   - name: ansible-role-keyboard-ubuntu-xenial
