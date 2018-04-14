@@ -1,27 +1,32 @@
 ---
-ansible:
-  playbook: tests/test.yml
-
 dependency:
   name: galaxy
 
 driver:
   name: docker
 
-docker:
-  containers:
+lint:
+  name: yamllint
+
+platforms:
   - name: ansible-role-keyboard-debian-wheezy
-    image: debian
-    image_version: '7'
+    image: debian:7
   - name: ansible-role-keyboard-debian-jessie
-    image: debian
-    image_version: '8'
+    image: debian:8
   - name: ansible-role-keyboard-ubuntu-trusty
-    image: ubuntu
-    image_version: '14.04'
+    image: ubuntu:14.04
   - name: ansible-role-keyboard-ubuntu-xenial
-    image: ubuntu
-    image_version: '16.04'
+    image: ubuntu:16.04
+
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+
+scenario:
+  name: default
 
 verifier:
   name: testinfra
+  lint:
+    name: flake8
