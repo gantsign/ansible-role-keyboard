@@ -15,10 +15,7 @@ platforms:
 provisioner:
   name: ansible
   playbooks:
-    create: ../default/create.yml
-    destroy: ../default/destroy.yml
     converge: ../default/playbook.yml
-    prepare: ../default/prepare.yml
   lint:
     name: ansible-lint
 
