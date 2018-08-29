@@ -9,7 +9,7 @@ lint:
   name: yamllint
 
 platforms:
-  - name: ansible-role-keyboard-debian-stretch
+  - name: ansible-role-keyboard-debian-max
     image: debian:9
 
 provisioner:

@@ -9,7 +9,7 @@ lint:
   name: yamllint
 
 platforms:
-  - name: ansible-role-keyboard-debian-wheezy
+  - name: ansible-role-keyboard-debian-min
     image: debian:7
 
 provisioner:
