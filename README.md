@@ -10,7 +10,7 @@ Role to configure the keyboard layout etc.
 Requirements
 ------------
 
-* Ansible >= 2.7
+* Ansible >= 2.8
 
 * Linux Distribution
 
