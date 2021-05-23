@@ -1,7 +1,7 @@
 Ansible Role: Keyboard
 ======================
 
-[![Build Status](https://travis-ci.com/gantsign/ansible-role-keyboard.svg?branch=master)](https://travis-ci.com/gantsign/ansible-role-keyboard)
+[![Tests](https://github.com/gantsign/ansible-role-keyboard/workflows/Tests/badge.svg)](https://github.com/gantsign/ansible-role-keyboard/actions?query=workflow%3ATests)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.keyboard-blue.svg)](https://galaxy.ansible.com/gantsign/keyboard)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible-role-keyboard/master/LICENSE)
 
