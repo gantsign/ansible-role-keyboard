@@ -2,7 +2,9 @@
 - name: install keyboard-configuration
   become: yes
   apt:
-    name: keyboard-configuration
+    name:
+      - keyboard-configuration
+      - console-setup
     state: present
   when: ansible_os_family == 'Debian'
 
