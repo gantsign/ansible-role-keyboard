@@ -19,13 +19,14 @@ jobs:
     strategy:
       matrix:
         ansible-version:
-          - '2.8.16'
           - '2.9.1'
         molecule-scenario:
           - debian-min
           - debian-max
           - default
-          - ubuntu-min
+        include:
+          - ansible-version: '2.8.16'
+            molecule-scenario: ubuntu-min
 
     env:
       MOLECULEW_ANSIBLE: ${{ matrix.ansible-version }}
