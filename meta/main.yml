@@ -14,7 +14,6 @@ galaxy_info:
       versions:
         - buster
         - stretch
-        - jessie
   galaxy_tags:
     - keyboard
     - ubuntu
