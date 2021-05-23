@@ -13,7 +13,7 @@ lint: |
 
 platforms:
   - name: ansible-role-keyboard-debian-max
-    image: debian:9
+    image: debian:10
     dockerfile: ../default/Dockerfile.j2
 
 provisioner:

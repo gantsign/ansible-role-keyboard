@@ -1,7 +1,7 @@
 Ansible Role: Keyboard
 ======================
 
-[![Build Status](https://travis-ci.com/gantsign/ansible-role-keyboard.svg?branch=master)](https://travis-ci.com/gantsign/ansible-role-keyboard)
+[![Tests](https://github.com/gantsign/ansible-role-keyboard/workflows/Tests/badge.svg)](https://github.com/gantsign/ansible-role-keyboard/actions?query=workflow%3ATests)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.keyboard-blue.svg)](https://galaxy.ansible.com/gantsign/keyboard)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible-role-keyboard/master/LICENSE)
 
@@ -18,13 +18,13 @@ Requirements
 
         * Debian
 
-            * Jessie (8)
             * Stretch (9)
+            * Buster (10)
 
         * Ubuntu
 
-            * Xenial (16.04)
             * Bionic (18.04)
+            * Focal (20.04)
 
 Role Variables
 --------------

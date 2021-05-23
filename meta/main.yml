@@ -8,12 +8,12 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - xenial
         - bionic
+        - focal
     - name: Debian
       versions:
+        - buster
         - stretch
-        - jessie
   galaxy_tags:
     - keyboard
     - ubuntu
