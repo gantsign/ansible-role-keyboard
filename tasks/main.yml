@@ -1,16 +1,16 @@
 ---
-- name: install keyboard-configuration
-  become: yes
-  apt:
+- name: Install keyboard-configuration
+  become: true
+  ansible.builtin.apt:
     name:
       - keyboard-configuration
       - console-setup
     state: present
   when: ansible_os_family == 'Debian'
 
-- name: write keyboard configration
-  become: yes
-  template:
+- name: Write keyboard configration
+  become: true
+  ansible.builtin.template:
     src: keyboards.j2
     dest: /etc/default/keyboard
     force: yes
